@@ -1106,5 +1106,39 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
   animation-play-state: paused !important;
 }
 
+.floating-gif {
+  position: fixed;
+  bottom: 20px; /* change if you want it higher */
+  left: -200px; /* start outside screen */
+  width: 150px; /* adjust size */
+  z-index: 999;
+  animation: moveAcross 8s linear infinite;
+}
+
+@keyframes moveAcross {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
 
+.floating-gif-left {
+  position: fixed;
+  top: 20px; /* position at top, change if needed */
+  right: -200px; /* start outside screen */
+  width: 150px;
+  z-index: 999;
+  animation: moveAcrossLeft 8s linear infinite;
+}
+
+@keyframes moveAcrossLeft {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 100%;
+  }
+}
