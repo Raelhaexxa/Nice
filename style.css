@@ -1193,25 +1193,25 @@ body {
 .main-layout {
     display: flex;
     height: 100vh;
-    gap: 50px; /* space between left and right sides */
+    gap: 60px; /* space between left and right sides */
     padding: 20px;
 }
 
 /* ====== LEFT SIDE ====== */
 .left-side {
     width: 100vh; /* increased width for poem section */
-    padding: 50px 40px;
+    padding: 80px 30px;
     overflow-y: auto;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(5px);
-    box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+    /* background: rgba(255, 255, 255, 0.85); */
+    /* backdrop-filter: blur(5px); */
+    /* box-shadow: 4px 4px 20px rgba(0,0,0,0.1); */
     border-radius: 20px;
 }
 
 /* Poems Section */
 .poem-section {
-    margin-bottom: 50px;
-    padding: 30px 25px;
+    margin-bottom: px;
+    padding: 50px 25px;
     background: #fff0f5;
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
