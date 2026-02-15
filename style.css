@@ -1183,11 +1183,12 @@ body.slide-out-left {
 
 
 /* ====== PAGE LAYOUT ====== */
+ /* ====== PAGE LAYOUT ====== */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(120deg, #ffd1dc, #fff0f5);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .main-layout {
@@ -1199,24 +1200,21 @@ body {
 
 /* ====== LEFT SIDE ====== */
 .left-side {
-    width: 100vh; /* increased width for poem section */
+    width: 100vh; /* desktop width */
     padding: 80px 30px;
     overflow-y: auto;
-    /* background: rgba(255, 255, 255, 0.85); */
-    /* backdrop-filter: blur(5px); */
-    /* box-shadow: 4px 4px 20px rgba(0,0,0,0.1); */
     border-radius: 20px;
 }
 
 /* Poems Section */
 .poem-section {
-    margin-bottom: px;
+    margin-bottom: 0;
     padding: 50px 25px;
     background: #fff0f5;
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     animation: float 3s ease-in-out infinite;
-    word-wrap: break-word; /* ensures long words wrap properly */
+    word-wrap: break-word;
 }
 
 .poem-section h2 {
@@ -1241,7 +1239,7 @@ body {
 
 /* ====== RIGHT SIDE CAROUSEL ====== */
 .right-side {
-    width: 50%; /* slightly bigger carousel */
+    width: 50%; /* desktop width */
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -1269,6 +1267,59 @@ body {
 .carousel img:hover {
     transform: scale(1.05);
 }
+
+/* ====== MOBILE RESPONSIVE ====== */
+@media screen and (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+        padding: 15px;
+    }
+
+    .left-side {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .poem-section {
+        padding: 30px 15px;
+    }
+
+    .poem-section h2 {
+        font-size: 28px;
+    }
+
+    .poem-section p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .right-side {
+        width: 100%;
+        height: 300px; /* fixed height for mobile carousel */
+        border-radius: 15px;
+    }
+
+    .carousel {
+        position: relative; /* allow scrolling on mobile */
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        height: 100%;
+        animation: none; /* disable auto scroll on mobile */
+    }
+
+    .carousel img {
+        width: 90%;
+        max-width: 300px;
+        height: 100%;
+        flex-shrink: 0;
+        margin-right: 10px;
+        scroll-snap-align: start;
+    }
+}
+
 
 /* Smooth Infinite Scroll */
 @keyframes scrollDown {
