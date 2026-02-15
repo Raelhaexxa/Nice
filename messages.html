@@ -40,11 +40,9 @@
             </p>
         </div>
 
-        
- 
-
     </div>
 
+    <!-- RIGHT SIDE CAROUSEL -->
     <div class="right-side">
         <div class="carousel">
 
@@ -61,9 +59,26 @@
 
 </div>
 
+<!-- BACK ARROW BUTTON -->
+<a href="https://raelhaexxa.github.io/Nice/index.html" class="arrow-btn-back" onclick="redirectWithSlide(event)">
+      ←
+</a>
+
 <script>
 function toggleEnvelope(id) {
     document.getElementById(id).classList.toggle('flap');
+}
+
+// Slide transition for navigation
+function redirectWithSlide(e) {
+    e.preventDefault();
+    const url = e.currentTarget.href;
+
+    document.body.classList.add('slide-out-left');
+
+    setTimeout(() => {
+        window.location.href = url;
+    }, 600);  
 }
 </script>
 

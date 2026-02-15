@@ -1143,37 +1143,44 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
   }
 }
 
+ /* Arrow Button */
 .arrow-btn {
     position: fixed;
     right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 30px;
     font-size: 40px;
+    color: #ff4d6d;
     text-decoration: none;
-    background: #ff4d6d;
-    color: white;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: 0.3s ease;
-    animation: bounce 1.5s infinite;
+    z-index: 1000;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.arrow-btn-back {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    font-size: 40px;
+    color: #ff4d6d;
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover Animation */
 .arrow-btn:hover {
-    background: #ff1e4d;
-    transform: translateY(-50%) scale(1.1);
+    transform: translateX(10px) scale(1.2) rotate(10deg);
+    color: #ff1a75;
 }
 
-/* Bounce animation */
-@keyframes bounce {
-    0%, 100% { transform: translateY(-50%); }
-    50% { transform: translateY(-60%); }
+/* Slide Out Animation */
+body.slide-out-left {
+    animation: slideOutLeft 0.6s forwards;
 }
+
+@keyframes slideOutLeft {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-100%) scale(0.95); opacity: 0; }
+}
+
 
 /* ====== PAGE LAYOUT ====== */
 body {
@@ -1268,3 +1275,5 @@ body {
     0% { transform: translateY(0); }
     100% { transform: translateY(-400vh); }
 }
+
+

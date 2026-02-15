@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<a href="/messages.html" class="arrow-btn">
-    ➜
-</a>
+ 
 <body>
   <img src="https://raelhaexxa.github.io/Nice/gif/1.gif" class="floating-gif" alt="cute gif">
   <img src="https://raelhaexxa.github.io/Nice/gif/3.gif" class="floating-gif-left" alt="cute gif">
 
+    <a href="https://raelhaexxa.github.io/Nice/messages.html" class="arrow-btn" onclick="redirectWithSlide(event)">
+      ➜
+  </a>
 
-   
-    <div class="container ">
-        <div class="envelope-wrapper" id="envelope1">
+   <div class="container ">
+       <div class="envelope-wrapper" id="envelope1">
             <div class="envelope">
                 <div class="heart" onclick="toggleEnvelope('envelope1')"></div>
                 <div class="letter">
@@ -50,9 +50,21 @@
     
     
    <script>
-    function toggleEnvelope(id) {
-        document.getElementById(id).classList.toggle('flap');
-    }
+   function toggleEnvelope(id) {
+    document.getElementById(id).classList.toggle('flap');
+}
+
+ 
+function redirectWithSlide(e) {
+    e.preventDefault();
+    const url = e.currentTarget.href;
+
+    document.body.classList.add('slide-out-left');
+
+    setTimeout(() => {
+        window.location.href = url;
+    }, 600);  
+}
 </script>
 
 </body>
