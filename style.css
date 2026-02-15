@@ -1142,3 +1142,129 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
     right: 100%;
   }
 }
+
+.arrow-btn {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    text-decoration: none;
+    background: #ff4d6d;
+    color: white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    animation: bounce 1.5s infinite;
+}
+
+/* Hover effect */
+.arrow-btn:hover {
+    background: #ff1e4d;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(-60%); }
+}
+
+/* ====== PAGE LAYOUT ====== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #ffd1dc, #fff0f5);
+    overflow: hidden;
+}
+
+.main-layout {
+    display: flex;
+    height: 100vh;
+    gap: 50px; /* space between left and right sides */
+    padding: 20px;
+}
+
+/* ====== LEFT SIDE ====== */
+.left-side {
+    width: 100vh; /* increased width for poem section */
+    padding: 50px 40px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+/* Poems Section */
+.poem-section {
+    margin-bottom: 50px;
+    padding: 30px 25px;
+    background: #fff0f5;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    animation: float 3s ease-in-out infinite;
+    word-wrap: break-word; /* ensures long words wrap properly */
+}
+
+.poem-section h2 {
+    font-size: 34px;
+    color: #ff4d6d;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.poem-section p {
+    font-size: 19px;
+    line-height: 2;
+    color: #333;
+    max-width: 100%;
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* ====== RIGHT SIDE CAROUSEL ====== */
+.right-side {
+    width: 50%; /* slightly bigger carousel */
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Carousel */
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: scrollDown 25s linear infinite;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: transform 0.5s ease;
+    border-radius: 20px;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+}
+
+/* Smooth Infinite Scroll */
+@keyframes scrollDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-400vh); }
+}
